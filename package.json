@@ -1,8 +1,7 @@
 {
   "name": "projeto16-shortly",
   "version": "1.0.0",
-  "type":"module",
-  "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
@@ -23,5 +22,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joltzz/back-shortly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joltzz/back-shortly/issues"
+  },
+  "homepage": "https://github.com/joltzz/back-shortly#readme",
+  "description": ""
 }
