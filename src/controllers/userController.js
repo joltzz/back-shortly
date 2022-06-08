@@ -3,13 +3,11 @@ import { db } from '../db.js';
 
 export async function createUser(req, res) {
   const user = req.body;
-
   try {
     const existingUsers = await db.query('SELECT * FROM users WHERE email=$1', [user.email])
     if (existingUsers.rowCount > 0) {
       return res.sendStatus(409);
     }
-
     const passwordHash = bcrypt.hashSync(user.password, 10);
 
     await db.query(`
