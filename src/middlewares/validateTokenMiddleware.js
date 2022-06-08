@@ -1,4 +1,4 @@
-import { db } from "../db.js"
+import db from "../db.js"
 
 export async function validateTokenMiddleware(req, res, next){
     const { authorization } = req.headers;

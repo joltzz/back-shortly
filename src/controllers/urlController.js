@@ -1,11 +1,11 @@
-import { nanoid } from "nanoid"
-import { db } from "../db.js";
+import { v4 as uuid } from "uuid";
+import db from "../db.js";
 
 export async function shortenURL(req, res){
     const { url } = req.body;
     try{
         const { session } = res.locals;
-        const shortUrl = nanoid()
+        const shortUrl = uuid();
         await db.query(`INSERT INTO urls ("userId", url, "shortUrl") VALUES ($1, $2, $3)`, [session.userId, url, shortUrl]);
         res.status(201).send({shortUrl});
     }catch(err){
